@@ -7,6 +7,7 @@ import Login from './views/Login.vue'
 import Logout from './views/Logout.vue'
 import Goodbye from './views/Goodbye.vue'
 import AnimalsIndex from './views/AnimalsIndex.vue'
+import AnimalsShow from './views/AnimalsShow.vue'
 
 Vue.use(Router)
 
@@ -20,6 +21,7 @@ export default new Router({
     { path: '/login', name: 'login', component: Login },
     { path: '/logout', name: 'logout', component: Logout },
     { path: '/goodbye', name: 'goodbye', component: Goodbye },
-    { path: '/animals', name: 'animals-index', component: AnimalsIndex }
+    { path: '/animals', name: 'animals-index', component: AnimalsIndex },
+    { path: '/animals/:id', name: 'animals-show', component: AnimalsShow }
   ]
 })
