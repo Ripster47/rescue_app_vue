@@ -14,7 +14,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Welcome to Landing!"
+      message: "Welcome to Home!"
     };
   },
   created: function() {},

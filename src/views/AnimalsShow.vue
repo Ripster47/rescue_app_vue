@@ -4,11 +4,11 @@
     <h1>{{ animal.name }}</h1>
     <img v-bind:src="animal.image_url" v-bind:alt="animal.name">
     <h3>Species: {{ animal.species }}</h3>
-    <h3>Description: {{animal.description}}</h3>
     <h3>Availability Status: {{ yesOrNo() }}</h3>
-    <h3>Medical Status: {{ animal.medical_status}}</h3>
     <h3>Gender: {{ animal.gender }}</h3>
     <h3>Age: {{ animal.age }}</h3>
+    <h3>Description: {{animal.description}}</h3>
+    <h3>Medical Status: {{ animal.medical_status}}</h3>
     <h3>Adoption Donation: {{ animal.donation }}</h3>
   </div>
 </template>
