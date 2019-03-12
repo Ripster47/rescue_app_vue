@@ -1,6 +1,7 @@
 <template>
-  <div class="home">
+  <div class="goodbye">
     <h1>{{ message }}</h1>
+    <router-link to="/">Home</router-link> 
   </div>
 </template>
 
@@ -10,11 +11,11 @@
 <script>
 
 import axios from "axios";
-
+  
 export default {
   data: function() {
     return {
-      message: "Welcome to Landing!"
+      message: "You have been successfully logged out!"
     };
   },
   created: function() {},
