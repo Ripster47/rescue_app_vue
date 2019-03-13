@@ -10,6 +10,8 @@
     <h3>Description: {{animal.description}}</h3>
     <h3>Medical Status: {{ animal.medical_status}}</h3>
     <h3>Adoption Donation: {{ animal.donation }}</h3>
+    <router-link :to=" '/animals/' + animal.id + '/edit' ">Edit</router-link>
+    <button v-on:click="destroyAnimal()">Delete</button>
   </div>
 </template>
 
@@ -51,6 +53,13 @@ export default {
             answer = "Still recovering, check back soon!";
         }
         return answer
+      },
+      destroyAnimal: function() {
+        axios.delete("/api/animals/" + this.animal.id)
+        .then(response => {
+          console.log("Success", response.data);
+          this.$router.push("/");
+        });
       }
   }
 };
