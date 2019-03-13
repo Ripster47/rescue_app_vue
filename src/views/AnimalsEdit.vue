@@ -78,7 +78,7 @@ export default {
                     age: this.animal.age,
                     description: this.animal.description,
                     medical_status: this.animal.medical_status,
-                    donation: this.animal.medical_status,
+                    donation: this.animal.donation,
                     image_url: this.animal.image_url
                     };
       axios.patch( "/api/animals/" + this.animal.id, params )
