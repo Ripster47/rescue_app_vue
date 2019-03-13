@@ -144,71 +144,70 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      passwordConfirmation: "",
-      phoneNumber: "",
-      address1: "",
-      address2: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      accommodations: "",
-      rent: "",
-      children: "",
-      adult: "",
-      volunteer: "",
-      foster: "",
-      usark: "",
-      exoticVet: "",
-      everOwned: "",
-      care: "",
-      provisions: "",
-      bequest: "",
-      accommodations: "",
-      permit: "",
-      errors: []
-          };
-        },
-        methods: {
-          submit: function() {
-            var params = {
-              first_name: this.firstName,
-              last_name: this.lastName,
-              email: this.email,
-              password: this.password,
-              password_confirmation: this.passwordConfirmation,
-              phone_number: this.phoneNumber,
-              address_1: this.address1,
-              address_2: this.address2,
-              city: this.city,
-              state: this.state,
-              zip_code: this.zipCode,
-              rent: this.rent,
-              children: this.children,
-              adult: this.adult,
-              volunteer: this.volunteer,
-              foster: this.foster,
-              usark: this.usark,
-              exotic_vet: this.exoticVet,
-              ever_owned: this.everOwned,
-              care: this.care,
-              provisions: this.provisions,
-              bequest: this.bequest,
-              accommodations: this.accommodations,
-              permit: this.permit
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            passwordConfirmation: "",
+            phoneNumber: "",
+            address1: "",
+            address2: "",
+            city: "",
+            state: "",
+            zipCode: "",
+            accommodations: "",
+            rent: "",
+            children: "",
+            adult: "",
+            volunteer: "",
+            foster: "",
+            usark: "",
+            exoticVet: "",
+            everOwned: "",
+            care: "",
+            provisions: "",
+            bequest: "",
+            accommodations: "",
+            permit: "",
+            errors: []
             };
-            axios
-              .post("/api/users", params)
-              .then(response => {
-                this.$router.push("/login");
-              })
-              .catch(error => {
-                this.errors = error.response.data.errors;
-              });
+  },
+    methods: {
+      submit: function() {
+        var params = {
+                      first_name: this.firstName,
+                      last_name: this.lastName,
+                      email: this.email,
+                      password: this.password,
+                      password_confirmation: this.passwordConfirmation,
+                      phone_number: this.phoneNumber,
+                      address_1: this.address1,
+                      address_2: this.address2,
+                      city: this.city,
+                      state: this.state,
+                      zip_code: this.zipCode,
+                      rent: this.rent,
+                      children: this.children,
+                      adult: this.adult,
+                      volunteer: this.volunteer,
+                      foster: this.foster,
+                      usark: this.usark,
+                      exotic_vet: this.exoticVet,
+                      ever_owned: this.everOwned,
+                      care: this.care,
+                      provisions: this.provisions,
+                      bequest: this.bequest,
+                      accommodations: this.accommodations,
+                      permit: this.permit
+                    };
+          axios.post("/api/users", params)
+            .then(response => {
+              this.$router.push("/login");
+            })
+            .catch(error => {
+              this.errors = error.response.data.errors;
+            });
           }
         }
-      };
+      }
 </script>
