@@ -100,7 +100,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/users/" + this.$route.params.id)
+    axios.get("/api/users/current")
     .then(response => {
       console.log(response.data);
       this.user = response.data;

@@ -10,6 +10,7 @@
     <h3>Description: {{animal.description}}</h3>
     <h3>Medical Status: {{ animal.medical_status}}</h3>
     <h3>Adoption Donation: {{ animal.donation }}</h3>
+    <router-link :to="'/animals/' + animal.id + '/adopt'" tag="button">Adopt Me!</router-link>
     <router-link :to="'/animals/' + animal.id + '/edit'" tag="button">Edit</router-link>
     <button v-on:click="destroyAnimal()">Delete</button>
   </div>

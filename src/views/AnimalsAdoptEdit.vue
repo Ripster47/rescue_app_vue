@@ -1,6 +1,6 @@
 <template>
-  <div class="users-adopt">
-    <div>
+  <div class="animals-adopt">
+    <div v-if="indicator">
       <form v-on:submit.prevent="submit()">
         <h1>Adoption Application</h1>
         <h3>Please update any information that may have changed and answer the following yes or no questions before proceeding!</h3>
@@ -120,7 +120,16 @@
             <input type="radio" name="bequest" value="true" v-model="user.bequest">Yes<br>
             <input type="radio" name="bequest" value="false" v-model="user.bequest">No<br>
           </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div v-else>
+      <h2>Adopt form goes here</h2>
+      <form>
+        <div>
+        <label>Click Below!</label>
+        <button v-on:click="createSubmission()">ADOPT!</button>
+        </div>
       </form>
     </div>
   </div>
@@ -160,13 +169,13 @@ export default {
               bequest: "",
               permit: "",
             },
-              errors: [] 
+      errors: [],
+      indicator: true
     };
   },
   created: function() {
     axios.get("/api/users/" + this.$route.params.id)
     .then(response => {
-      console.log(response.data);
       this.user = response.data;
     });
   },
@@ -198,10 +207,26 @@ export default {
                       permit: this.user.permit
                     };
       axios.patch( "/api/users/" + this.user.id, params )
+        .then(response => {
+          this.$router.push("/animals/" + this.user.id + '/adopt');
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+        });
+        var indicator = new Boolean(true)
+        this.indicator = !this.indicator
+    },
+      submissionCreate: function() {
+        var params = {
+                      animal_id: this.$route.params.id,
+                      purpose: "adoption"
+                      };
+      axios.post( "/api/submissions", params)
       .then(response => {
-        this.$router.push("/users/" + this.user.id);
+        console.log("Your adoption is now pending review!", response.data);
+        this.$router.push('/success');
       }).catch(error => {
-        this.errors = error.response.data.errors;
+        this.errors = error.response.data.errors
       });
     }
   }

@@ -7,7 +7,7 @@
       <router-link to="/login">Login</router-link> |
       <router-link to="/animals">Adoptables</router-link> |
       <router-link to="/animals/new">New</router-link> |
-      <router-link to="/logout">Logout</router-link> 
+      <router-link to="/logout">Logout</router-link> | 
     </div>
     <router-view/>
   </div>
