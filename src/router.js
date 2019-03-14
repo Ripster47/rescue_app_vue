@@ -5,7 +5,8 @@ import AnimalsNew from './views/AnimalsNew.vue'
 import AnimalsShow from './views/AnimalsShow.vue'
 import AnimalsEdit from './views/AnimalsEdit.vue'
 import SubmissionsAdoption from './views/SubmissionsAdoption.vue'
-import UsersEdit from './views/UsersEdit.vue'
+import UsersAdoptEdit from './views/UsersAdoptEdit.vue'
+import UsersRelinquishEdit from './views/UsersRelinquishEdit.vue'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Signup from './views/Signup.vue'
@@ -24,7 +25,8 @@ export default new Router({
     { path: '/animals/:id', name: 'animals-show', component: AnimalsShow },
     { path: '/animals/:id/edit', name: 'animals-edit', component: AnimalsEdit },
     { path: '/submissions/new', name: 'submissions-adoption', component: SubmissionsAdoption },
-    { path: '/users/:id/edit', name: 'users-edit', component: UsersEdit },
+    { path: '/users/:id/adopt', name: 'users-adopt', component: UsersAdoptEdit },
+    { path: '/users/:id/relinquish', name: 'users-relinquish', component: UsersRelinquishEdit },
     { path: '/about', name: 'about', component: About },
     { path: '/signup', name: 'signup', component: Signup },
     { path: '/login', name: 'login', component: Login },

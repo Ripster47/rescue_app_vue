@@ -1,8 +1,8 @@
 <template>
-  <div class="users-edit">
+  <div class="users-adopt">
     <div>
       <form v-on:submit.prevent="submit()">
-        <h1>Update Your Profile!</h1>
+        <h1>Adoption Application</h1>
         <h3>Please update any information that may have changed and answer the following yes or no questions before proceeding!</h3>
         <ul>
           <li v-for="error in errors">{{ error }}</li>
