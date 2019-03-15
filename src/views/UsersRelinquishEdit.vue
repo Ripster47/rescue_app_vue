@@ -1,6 +1,6 @@
 <template>
   <div class="users-relinquish">
-    <div>
+    <div v-if="indicator">
       <form v-on:submit.prevent="submit()">
         <h1>Relinquish Application
         </h1>
@@ -46,17 +46,28 @@
         </div>
         <br>
         <div>
-          <label>Animal you wish to relinquish?</label>
-          <input type="text">
+          <label>What type of animal are you looking to relinquish?</label>
+          <div>
+            <input type="text" v-model="newAnimalType">
+          </div>
         </div>
         <br>
         <div>
           <label>What is the reason for relinquishment?</label>
           <div>
-          <textarea cols="50" rows="5"></textarea>
+          <textarea cols="50" rows="5" v-model="newRelinquishReason"></textarea>
           </div>
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+    </div>
+    <div v-else>
+      <h2>Relinquish form goes here</h2>
+      <form>
+        <div>
+        <label>Click Below!</label>
+        <button v-on:click.prevent="createSubmission()">RELINQUISH!</button>
+        </div>
       </form>
     </div>
   </div>
@@ -96,7 +107,10 @@ export default {
               bequest: "",
               permit: "",
             },
-              errors: [] 
+      errors: [],
+      indicator: true,
+      newAnimalType: "",
+      newRelinquishReason: ""
     };
   },
   created: function() {
@@ -135,9 +149,23 @@ export default {
                     };
       axios.patch( "/api/users/" + this.user.id, params )
       .then(response => {
-        this.$router.push("/users/" + this.user.id);
+        this.indicator = false;
       }).catch(error => {
         this.errors = error.response.data.errors;
+      });
+    },
+    createSubmission: function() {
+      var params = {
+                    purpose: "relinquishment",
+                    relinquish_reason: this.newRelinquishReason,
+                    animal_type: this.newAnimalType
+                    };
+      axios.post( "/api/submissions", params)
+      .then(response => {
+        console.log("Your relinquishment is now pending review!", response.data);
+        this.$router.push('/success');
+      }).catch(error => {
+        this.errors = error.response.data.errors
       });
     }
   }
