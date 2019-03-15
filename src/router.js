@@ -6,6 +6,7 @@ import AnimalsShow from './views/AnimalsShow.vue'
 import AnimalsEdit from './views/AnimalsEdit.vue'
 import AnimalsAdoptEdit from './views/AnimalsAdoptEdit.vue'
 import UsersRelinquishEdit from './views/UsersRelinquishEdit.vue'
+import SubmissionsPending from './views/SubmissionsPending.vue'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Signup from './views/Signup.vue'
@@ -21,6 +22,7 @@ export default new Router({
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/animals', name: 'animals-index', component: AnimalsIndex },
+    { path: '/submissions/requests', name: 'submissions-pending', component: SubmissionsPending },
     { path: '/animals/new', name: 'animals-new', component: AnimalsNew },
     { path: '/animals/:id', name: 'animals-show', component: AnimalsShow },
     { path: '/animals/:id/edit', name: 'animals-edit', component: AnimalsEdit },

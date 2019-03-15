@@ -8,6 +8,7 @@
       <router-link to="/animals">Adoptables</router-link> |
       <router-link to="/relinquish/current">Relinquishments</router-link> |
       <router-link to="/animals/new">New</router-link> |
+      <router-link to="/submissions/requests">Pending Requests</router-link> |
       <router-link to="/logout">Logout</router-link> 
     </div>
     <router-view/>
