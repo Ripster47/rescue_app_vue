@@ -128,7 +128,7 @@
       <form>
         <div>
         <label>Click Below!</label>
-        <button v-on:click="createSubmission()">ADOPT!</button>
+        <button v-on:click.prevent="createSubmission()">ADOPT!</button>
         </div>
       </form>
     </div>
@@ -208,15 +208,14 @@ export default {
                     };
       axios.patch( "/api/users/" + this.user.id, params )
         .then(response => {
-          this.$router.push("/animals/" + this.user.id + '/adopt');
+          this.indicator = false;
         })
         .catch(error => {
           this.errors = error.response.data.errors;
         });
-        var indicator = new Boolean(true)
-        this.indicator = !this.indicator
+        
     },
-      submissionCreate: function() {
+      createSubmission: function() {
         var params = {
                       animal_id: this.$route.params.id,
                       purpose: "adoption"
