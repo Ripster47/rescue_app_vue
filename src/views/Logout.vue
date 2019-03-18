@@ -1,6 +1,5 @@
 <template>
   <div class="logout">
-    <h1>{{ message }}</h1>
   </div>
 </template>
 
