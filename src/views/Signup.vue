@@ -29,7 +29,7 @@
         </div>
         <div>
           <label>Phone Number:</label>
-          <input type="text" v-model="phoneNumber">
+          <input type="text" v-model="phoneNumber" placeholder="XXXXXXXXXX"> (Just numbers, no symbols!) 
         </div>
         <div>
           <label>Address 1:</label>
