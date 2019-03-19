@@ -50,6 +50,7 @@ export default {
         axios.get("/api/submissions/requests")
         .then(response => {
           this.submissions = response.data;
+          this.$router.push('/success')
         });
       }).catch(error => {
         this.errors = error.response.data.errors;
@@ -64,6 +65,7 @@ export default {
         axios.get("/api/submissions/requests")
         .then(response => {
           this.submissions = response.data;
+          this.$router.push('/success')
         });
       }).catch(error => {
         this.errors = error.response.data.errors;
