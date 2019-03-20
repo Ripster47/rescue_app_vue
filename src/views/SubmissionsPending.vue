@@ -35,6 +35,7 @@ export default {
     };
   },
   created: function() {
+    // this is where you need to add the redirection axios call that sends a user to google to sign in via Oauth
     axios.get("/api/submissions/requests")
     .then(response => {
       this.submissions = response.data;
