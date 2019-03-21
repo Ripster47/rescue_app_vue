@@ -17,7 +17,9 @@ export default {
       message: "Welcome to About!"
     };
   },
-  created: function() {},
+  created: function() {
+    
+  },
   methods: {}
 };
 </script>

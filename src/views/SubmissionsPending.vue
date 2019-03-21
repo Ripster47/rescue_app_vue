@@ -35,13 +35,16 @@ export default {
     };
   },
   created: function() {
-    
-    window.location.href = "http://localhost:3000/api/google/redirect";
-
-    // axios.get("/api/submissions/requests")
-    // .then(response => {
-    //   this.submissions = response.data;
-    // });
+    var access_time = localStorage.getItem("time")
+    console.log(access_time)
+    if (access_time >= access_time) {
+      window.location.href = "http://localhost:3000/api/google/redirect";
+    } else {
+      axios.get("/api/submissions/requests")
+      .then(response => {
+      this.submissions = response.data;
+      });
+    }
   },
   methods: {
     approveSubmission: function(inputID) {
