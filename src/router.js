@@ -31,7 +31,7 @@ export default new Router({
     { path: '/relinquish/current', name: 'users-relinquish', component: UsersRelinquishEdit },
     { path: '/about', name: 'about', component: About },
 
-    { path: '/catch/:at_google/:time_out/:rt_google/:exp_time', name: 'catch', component: Catch },
+    { path: '/catch/:at_google/:exp_time/:rt_google', name: 'catch', component: Catch },
     
     { path: '/signup', name: 'signup', component: Signup },
     { path: '/login', name: 'login', component: Login },

@@ -11,10 +11,16 @@
         <p>Phone Number: {{submission.user.phone_number}}</p>
         <p>{{submission.animal_type}}</p>
         <p>{{submission.relinquish_reason}}</p>
-        <button v-on:click="approveSubmission(submission.id)">Approve</button>
+        <button v-on:click.prevent="approveSubmission(submission.id)">Approve</button>
         <button v-on:click="denySubmission(submission.id)">Deny</button>
+  
+        <h2>When is the best time for them to adopt/relinquish their animal?</h2>
+        <form>
+          Appointment Time: <input type="datetime-local" v-model="startTime">
+        </form>
+        <button v-on:click="createEvent(submission)">Create Event and Send Notification</button>
       </div>
-    </div>
+  </div>
 </template>
 
 <style>
@@ -32,18 +38,20 @@ export default {
   data: function() {
     return {
       submissions: [],
-      currentSubmissionId: ""
+      currentSubmissionId: "",
+      startTime: "",
     };
   },
   created: function() {
-    var expTime = localStorage.getItem("time");
+    var expTime = localStorage.getItem("exp");
     var formattedTime = moment(expTime, "YYYY-MM-DD LTS UTC");
     var timeComparison = moment().isAfter(formattedTime);
 
-    if (timeComparison) {
+    if (expTime === null) {
+      window.location.href = "http://localhost:3000/api/google/redirect";
+    } else if (timeComparison) {
       window.location.href = "http://localhost:3000/api/google/redirect";
     } else {
-      // need to refresh at this point
       axios.get("/api/submissions/requests")
       .then(response => {
         this.submissions = response.data;
@@ -51,6 +59,22 @@ export default {
     }
   },
   methods: {
+    createEvent: function(submission) {
+      var formattedStartTime = moment(this.startTime).format()
+      var params = {
+                    start_time: this.formattedStartTime,
+                    submission_id: submission.id,
+                    rt_google: localStorage.getItem('rtg'),
+                    at_google: localStorage.getItem('atg')
+                    };
+
+      axios.post("api/google/events", params)
+        .then(response => {
+          this.$router.push('/success')
+        }).catch(error => {
+        this.errors = error.response.data.errors;
+      })
+    },
     approveSubmission: function(inputID) {
       var params = {
                     status: "approved"
@@ -59,8 +83,7 @@ export default {
       .then(response => {
         axios.get("/api/submissions/requests")
         .then(response => {
-          this.submissions = response.data;
-          this.$router.push('/success')
+          this.submissions = response.data;  
         });
       }).catch(error => {
         this.errors = error.response.data.errors;

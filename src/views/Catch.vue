@@ -19,10 +19,9 @@ export default {
   },
   created: function() {
     localStorage.setItem( "atg", this.$route.params.at_google);
-    localStorage.setItem( "exp", this.$route.params.time_out);
+    localStorage.setItem( "exp", this.$route.params.exp_time);
     localStorage.setItem( "rtg", this.$route.params.rt_google);
-    localStorage.setItem( "time", this.$route.params.exp_time);
-    this.$router.push("/submission/requests")
+    this.$router.push("/submissions/requests")
   },
   methods: {}
 };
