@@ -26,6 +26,7 @@ img{
 <script>
 
 import axios from "axios";
+var moment = require('moment');
   
 export default {
   data: function() {
@@ -35,14 +36,17 @@ export default {
     };
   },
   created: function() {
-    var access_time = localStorage.getItem("time")
-    console.log(access_time)
-    if (access_time >= access_time) {
+    var expTime = localStorage.getItem("time");
+    var formattedTime = moment(expTime, "YYYY-MM-DD LTS UTC");
+    var timeComparison = moment().isAfter(formattedTime);
+
+    if (timeComparison) {
       window.location.href = "http://localhost:3000/api/google/redirect";
     } else {
+      // need to refresh at this point
       axios.get("/api/submissions/requests")
       .then(response => {
-      this.submissions = response.data;
+        this.submissions = response.data;
       });
     }
   },
