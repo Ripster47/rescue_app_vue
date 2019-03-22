@@ -60,9 +60,8 @@ export default {
   },
   methods: {
     createEvent: function(submission) {
-      var formattedStartTime = moment(this.startTime).format()
       var params = {
-                    start_time: this.formattedStartTime,
+                    start_time: this.startTime,
                     submission_id: submission.id,
                     rt_google: localStorage.getItem('rtg'),
                     at_google: localStorage.getItem('atg')
