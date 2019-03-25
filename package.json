@@ -10,11 +10,14 @@
     "axios": "^0.18.0",
     "moment": "^2.24.0",
     "vue": "^2.6.6",
+    "vue-badger-accordion": "^1.1.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
   "postcss": {

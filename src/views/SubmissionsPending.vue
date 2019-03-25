@@ -1,24 +1,31 @@
 <template>
   <div class="submissions-pending">
       <div v-for="submission in submissions" v-bind:value="currentSubmissionId">
-        <h1>{{submission.formatted.purpose}}</h1>
-        <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
-        <p>Name: {{submission.user.first_name}} {{submission.user.last_name}}</p>
-        <p v-if="submission.animal">Would like to adopt: {{submission.animal.name}}</p>
-        <p>Address: {{submission.user.address_1}} {{submission.user.address_2}}</p>
-        <p>City: {{submission.user.city}} State: {{submission.user.state}} Zip: {{submission.user.zip_code}}</p>
-        <p>Email: {{submission.user.email}}</p>
-        <p>Phone Number: {{submission.user.phone_number}}</p>
-        <p>{{submission.animal_type}}</p>
-        <p>{{submission.relinquish_reason}}</p>
-        <button v-on:click.prevent="approveSubmission(submission.id)">Approve</button>
-        <button v-on:click="denySubmission(submission.id)">Deny</button>
-  
-        <h2>When is the best time for them to adopt/relinquish their animal?</h2>
-        <form>
-          Appointment Time: <input type="datetime-local" v-model="startTime">
-        </form>
-        <button v-on:click="createEvent(submission)">Create Event and Send Notification</button>
+        <badger-accordion>
+          <badger-accordion-item>
+            <div slot="header"><h1>{{submission.formatted.purpose}}</h1>
+            <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
+            <p>Name: {{submission.user.first_name}} {{submission.user.last_name}}</p>
+            <p v-if="submission.animal">Would like to adopt: {{submission.animal.name}}</p>
+            <p>Address: {{submission.user.address_1}} {{submission.user.address_2}}</p>
+            <p>City: {{submission.user.city}} State: {{submission.user.state}} Zip: {{submission.user.zip_code}}</p>
+            <p>Email: {{submission.user.email}}</p>
+            <p>Phone Number: {{submission.user.phone_number}}</p>
+            <p>{{submission.animal_type}}</p>
+            <p>{{submission.relinquish_reason}}</p>
+            <button>Approve</button>
+            <button v-on:click="denySubmission(submission.id)">Deny</button>
+           </div>
+            <div slot="content">
+<!--             <button v-on:click.prevent="approveSubmission(submission.id)">Approve</button>
+ -->            <h2>When is the best time for them to adopt/relinquish their animal?</h2>
+            <form>
+              Appointment Time: <input type="datetime-local" v-model="startTime">
+            </form>
+            <button v-on:click="createEvent(submission)">Create Event</button>
+            </div>
+          </badger-accordion-item>
+        </badger-accordion>
       </div>
   </div>
 </template>
@@ -33,14 +40,19 @@ img{
 
 import axios from "axios";
 var moment = require('moment');
+import {BadgerAccordion, BadgerAccordionItem} from 'vue-badger-accordion';
   
 export default {
   data: function() {
     return {
-      submissions: [],
-      currentSubmissionId: "",
-      startTime: "",
-    };
+            components: {
+                  BadgerAccordion,
+                  BadgerAccordionItem
+              },
+            submissions: [],
+            currentSubmissionId: "",
+            startTime: "",
+          };
   },
   created: function() {
     var expTime = localStorage.getItem("exp");
@@ -59,21 +71,6 @@ export default {
     }
   },
   methods: {
-    createEvent: function(submission) {
-      var params = {
-                    start_time: this.startTime,
-                    submission_id: submission.id,
-                    rt_google: localStorage.getItem('rtg'),
-                    at_google: localStorage.getItem('atg')
-                    };
-
-      axios.post("api/google/events", params)
-        .then(response => {
-          this.$router.push('/success')
-        }).catch(error => {
-        this.errors = error.response.data.errors;
-      })
-    },
     approveSubmission: function(inputID) {
       var params = {
                     status: "approved"
@@ -88,6 +85,23 @@ export default {
         this.errors = error.response.data.errors;
       });
     },
+    createEvent: function(submission) {
+      var params = {
+                    start_time: this.startTime,
+                    submission_id: submission.id,
+                    rt_google: localStorage.getItem('rtg'),
+                    at_google: localStorage.getItem('atg')
+                    };
+
+      axios.post("api/google/events", params)
+        .then(response => {
+          this.$router.push('/success')
+        }).catch(error => {
+        this.errors = error.response.data.errors;
+      });
+        this.approveSubmission(submission.id)
+    },
+
     denySubmission: function(inputID) {
       var params = {
                     status: "denied"
@@ -97,7 +111,6 @@ export default {
         axios.get("/api/submissions/requests")
         .then(response => {
           this.submissions = response.data;
-          this.$router.push('/success')
         });
       }).catch(error => {
         this.errors = error.response.data.errors;
