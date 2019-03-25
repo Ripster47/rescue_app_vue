@@ -1,33 +1,62 @@
 <template>
   <div class="submissions-pending">
-      <div v-for="submission in submissions" v-bind:value="currentSubmissionId">
-        <badger-accordion>
-          <badger-accordion-item>
-            <div slot="header"><h1>{{submission.formatted.purpose}}</h1>
-            <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
-            <p>Name: {{submission.user.first_name}} {{submission.user.last_name}}</p>
-            <p v-if="submission.animal">Would like to adopt: {{submission.animal.name}}</p>
-            <p>Address: {{submission.user.address_1}} {{submission.user.address_2}}</p>
-            <p>City: {{submission.user.city}} State: {{submission.user.state}} Zip: {{submission.user.zip_code}}</p>
-            <p>Email: {{submission.user.email}}</p>
-            <p>Phone Number: {{submission.user.phone_number}}</p>
-            <p>{{submission.animal_type}}</p>
-            <p>{{submission.relinquish_reason}}</p>
-            <button>Approve</button>
-            <button v-on:click="denySubmission(submission.id)">Deny</button>
-           </div>
-            <div slot="content">
-<!--             <button v-on:click.prevent="approveSubmission(submission.id)">Approve</button>
- -->            <h2>When is the best time for them to adopt/relinquish their animal?</h2>
-            <form>
-              Appointment Time: <input type="datetime-local" v-model="startTime">
-            </form>
-            <button v-on:click="createEvent(submission)">Create Event</button>
+    <div class="grid-wrapper section">
+      <div class="container">
+        <div class="">
+          <div class="element-content">
+            <div id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="card card-accordion">
+                <div class="card-header" role="tab" id="heading1">
+                  <div class="" v-for="submission in submissions" v-bind:value="currentSubmissionId">
+                    <h6 class="mb-0">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        <div class="" slot="header"><h1>{{submission.formatted.purpose}}</h1></div> 
+                      </a>
+                    </h6>
+                    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1">
+                      <div class="card-block">
+                        <badger-accordion>
+                          <badger-accordion-item>
+                            <div class="row" slot="header">
+                              <div class="float-left col-4">
+                                <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
+                              </div>
+                              <div class="col-6">
+                                <p>Name: {{submission.user.first_name}} {{submission.user.last_name}}</p>
+                                <p v-if="submission.animal">Would like to adopt: {{submission.animal.name}}</p>
+                                <p>Address: {{submission.user.address_1}} {{submission.user.address_2}}</p>
+                                <p>City: {{submission.user.city}} State: {{submission.user.state}} Zip: {{submission.user.zip_code}}</p>
+                                <p>Email: {{submission.user.email}}</p>
+                                <p>Phone Number: {{submission.user.phone_number}}</p>
+                                <p>{{submission.animal_type}}</p>
+                                <p>{{submission.relinquish_reason}}</p>
+                              </div>
+                                <div class="float-right col-2"> 
+                                  <button>Approve</button>
+                                  <button v-on:click="denySubmission(submission.id)">Deny</button>
+                                </div>
+                            </div>
+                            <div slot="content">
+                              <h2>Schedule Drop-off/Pick-up</h2>
+                              <form>
+                                Appointment Time: <input type="datetime-local" v-model="startTime">
+                              </form>
+                              <button v-on:click="createEvent(submission)">Create Event</button>
+                            </div>
+                          </badger-accordion-item>
+                        </badger-accordion>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </badger-accordion-item>
-        </badger-accordion>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
+</div>
 </template>
 
 <style>
