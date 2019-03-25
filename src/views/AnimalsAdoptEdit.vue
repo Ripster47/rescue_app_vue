@@ -120,7 +120,7 @@
             <input type="radio" name="bequest" value="true" v-model="user.bequest">Yes<br>
             <input type="radio" name="bequest" value="false" v-model="user.bequest">No<br>
           </div>
-        <input type="submit" value="Submit">
+        <input class="btn mt-2 mb-2 btn-primary" type="submit" value="Submit">
       </form>
     </div>
     <div v-else>
@@ -128,7 +128,7 @@
       <form>
         <div>
         <label>Click Below!</label>
-        <button v-on:click.prevent="createSubmission()">ADOPT!</button>
+        <button class="btn mt-2 mb-2 btn-primary" v-on:click.prevent="createSubmission()">ADOPT!</button>
         </div>
       </form>
     </div>
