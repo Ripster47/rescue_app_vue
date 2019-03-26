@@ -1,76 +1,74 @@
 <template>
   <div class="users-relinquish">
-    <div v-if="indicator">
-      <form v-on:submit.prevent="submit()">
-        <h1>Relinquish Application
-        </h1>
-        <h3>Please update any information that may have changed and answer the following questions before proceeding!</h3>
-        <ul>
-          <li v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div>
-          <label>First Name:</label> 
-          <input type="text" v-model="user.first_name">
-        </div>
-         <div>
-          <label>Last Name:</label> 
-          <input type="text" v-model="user.last_name">
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" v-model="user.email">
-        </div>
-        <div>
-          <label>Phone Number:</label>
-          <input type="text" v-model="user.phone_number">
-        </div>
-        <div>
-          <label>Address 1:</label>
-          <input type="text" v-model="user.address_1">
-        </div>
-         <div>
-          <label>Address 2:</label>
-          <input type="text" v-model="user.address_2">
-        </div>
-        <div>
-          <label>City:</label>
-          <input type="text" v-model="user.city">
-        </div>
-        <div>
-          <label>State:</label>
-          <input type="text" v-model="user.state">
-        </div>
-        <div>
-          <label>Zip Code:</label>
-          <input type="text" v-model="user.zip_code">
-        </div>
-        <br>
-        <div>
-          <label>What type of animal are you looking to relinquish?</label>
-          <div>
-            <input type="text" v-model="newAnimalType">
+    <div class="container">
+      <div v-if="indicator">
+        <form v-on:submit.prevent="submit()">
+          <h1 class=" text-center pb-5">Relinquish Application</h1>
+          <p class="pb-5">Please update any information that may have changed and answer the following questions before proceeding</p>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+          </ul>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" aria-describedby="userName" placeholder="First Name" v-model="user.first_name">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control"  aria-describedby="userName" placeholder="Last Name" v-model="user.last_name">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" v-model="user.email">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control"  placeholder="Phone" v-model="user.phone_number">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control"  placeholder="Home Address" v-model="user.address_1">
+            </div>
+            <div class="form-group col-md-6">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="Apt #, Suite, Etc." v-model="user.address_2">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="City" v-model="user.city">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="State Ex. NY, MA, FL" v-model="user.state">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" placeholder="Zip Code Ex 90210" v-model="user.zip_code">
+            </div>
+            <div class="form-group col-md-6 pb-4">
+              <label>What type of animal are you looking to relinquish?</label>
+            <div>
+              <input class="form-group col-md-6" type="text" v-model="newAnimalType">
+            </div>
+            </div>
+            <div class="form-group col-md-6">
+            </div>
+            <div class="form-group col-md-6">
+              <label>What is the reason for relinquishment?</label>
+            <div class="pb-4">
+              <textarea cols="50" rows="5" v-model="newRelinquishReason"></textarea>
+            </div>
+            </div>
           </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+      </div>
+      <div v-else>
+        <h2>Relinquish form goes here</h2>
+          <form>
+            <div>
+              <label>Click Below!</label>
+              <button v-on:click.prevent="createSubmission()">RELINQUISH!</button>
+            </div>
+          </form>
         </div>
-        <br>
-        <div>
-          <label>What is the reason for relinquishment?</label>
-          <div>
-          <textarea cols="50" rows="5" v-model="newRelinquishReason"></textarea>
-          </div>
-        </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
-    </div>
-    <div v-else>
-      <h2>Relinquish form goes here</h2>
-      <form>
-        <div>
-        <label>Click Below!</label>
-        <button v-on:click.prevent="createSubmission()">RELINQUISH!</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
+</div>
 </template>
 
 <style>
