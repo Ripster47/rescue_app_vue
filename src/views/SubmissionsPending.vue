@@ -124,7 +124,7 @@ export default {
 
       axios.post("api/google/events", params)
         .then(response => {
-          this.$router.push('/success')
+          this.$router.push('/animals')
         }).catch(error => {
         this.errors = error.response.data.errors;
       });
