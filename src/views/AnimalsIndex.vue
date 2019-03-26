@@ -1,14 +1,14 @@
 <template>
   <div class="animals-index">
     <div class="container">
-      <div class="card-deck row row-eq-height">
-        <div class="card col-md-4 " v-for="animal in animals">
+      <div class="row row-eq-height">
+        <div class="card col-md-4" v-for="animal in animals">
           <div class="card_img">
             <router-link v-bind:to="'/animals/' + animal.id">
               <img class="img-full" v-bind:src="animal.image_url" v-bind:alt="animal.name">
             </router-link>
           </div>
-          <div class="card-block">
+          <div class="card-block special-card">
             <a href="#"><h3 class="card-title">{{animal.name}}</h3></a>
             <p class="card-text">{{animal.description}}</p>
           </div>
@@ -51,8 +51,11 @@
 
 <style>
 .animals-index .card:hover {
-  box-shadow: 8px 8px 35px 8px whitesmoke
+  box-shadow: 8px 8px 35px 8px #004d00
 }
+div.card.col-md-4{
+  background-image: url('/vintage-concrete.png');
+} 
 </style>
 
 <script>

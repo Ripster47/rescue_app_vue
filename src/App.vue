@@ -8,13 +8,13 @@
 
 
     <!-- NAVBAR -->
-    <nav class="text-center navbar navbar-expand-md main-nav  navbar-scrollUp bg-white">
+    <nav class="text-center navbar navbar-expand-md main-nav navbar-scrollUp bg-success">
       <div class="container">
         <button class="navbar-toggler animated" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="burger-menu icon-toggle"><i class="icon-menu icons"></i></i></span>
         </button>
         <a class="" href="/">
-          <h3>Friends of Scales</h3>
+          <img class="navpic" src="/FoSRR_burned.png" alt="">
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,21 +32,21 @@
               
 
             <li class="nav-item dropdown drop_single ">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">Meet the Crew</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">The Crew</a>
               
             </li>
 
-            <li class="dropdown megaDropMenu nav-item active">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/signup">Sign Up</a>
+            <li class="dropdown megaDropMenu nav-item ">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/signup">Register</a>
             </li>
-            <li class="dropdown megaDropMenu nav-item active" >
+            <li class="dropdown megaDropMenu nav-item" >
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/login">Login</a>
             </li>
-            <li class="dropdown megaDropMenu nav-item active" >
+            <li class="dropdown megaDropMenu nav-item" >
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/logout">Logout</a>
             </li>
-            <li class="dropdown megaDropMenu nav-item active" >
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/admintools">Admin Tools</a>
+            <li class="dropdown megaDropMenu nav-item" >
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/admintools">Admin</a>
             </li>
             <!-- header search -->
           </ul>
@@ -83,6 +83,10 @@
 
 <style>
 
+img.navpic{
+  max-width: 40%;
+  height: auto;
+}
 </style>
 
 <script>

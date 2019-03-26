@@ -12,19 +12,19 @@
         <div class="col-3"></div>
       </div>
       <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 text-center">
-          <h3 class="pb-3">Age: {{ animal.age }}</h3>
-          <h3 class="pb-3">Gender: {{ animal.gender }}</h3>
-          <h3 class="pb-3">Description: {{animal.description}}</h3>
-          <h3 class="pb-3">Availability Status: {{ yesOrNo() }}</h3>
-          <h3 class="pb-3">Medical Status: {{ animal.medical_status}}</h3>
-          <h3 class="pb-3">Adoption Donation: {{ animal.donation }}</h3>
+        <div class="col-3"></div>
+        <div class="col-6 text-center ">
+          <h4 class="pb-3"><strong>Description:</strong> <span class="des"> {{animal.description}}</span></h4>
+          <h4 class="pb-3"><strong>Availability Status:</strong> <span class="adpt"> {{ yesOrNo() }}</span></h4>
+          <h4 class="pb-3"><strong>Age:</strong> <span> {{ animal.age }} years old</span></h4>
+          <h4 class="pb-3"><strong>Gender:</strong> <span> {{ animal.gender }}</span></h4>
+          <h4 class="pb-3"><strong>Medical Status:</strong> <span> {{ animal.medical_status}}</span></h4>
+          <h4 class="pb-3"><strong>Adoption Donation:</strong> <span> {{ animal.donation }}</span></h4>
           <router-link class="btn btn-primary mr-3" :to="'/animals/' + animal.id + '/adopt'" tag="button">Adopt Me!</router-link>
           <router-link class="btn btn-warning ml-3 mr-3" :to="'/animals/' + animal.id + '/edit'" tag="button">Edit</router-link>
           <button class="btn btn-danger ml-3" v-on:click="destroyAnimal()">Delete</button>
         </div>
-        <div class="col-2"></div>
+        <div class="col-3"></div>
       </div>
     </div>
   </div>
@@ -33,6 +33,16 @@
 <style>
 img.image_bordered{
   width: 700px;
+}
+
+span{
+  font-size: 95%;
+}
+span.des{
+  font-size: 85%;
+}
+span.adpt{
+  font-size: 85%;
 }
 </style>
 
@@ -66,9 +76,9 @@ export default {
       yesOrNo: function() {
         var answer = ""
         if (this.animal.adoptable === true) {
-            answer = "Ready to find a home!";
+            answer = "Adoptable!";
         } else {
-            answer = "Still recovering, check back soon!";
+            answer = "Still recovering!";
         }
         return answer
       },

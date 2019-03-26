@@ -2,7 +2,7 @@
   <div class="animals-new">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1 class=" text-center pb-5">New Adoptable!</h1>
+        <h1 class=" text-center pb-5">New Adoptable</h1>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
           </ul>
@@ -19,12 +19,12 @@
             <div class="form-group col-md-4"></div>
             <div class="form-group col-md-4"></div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" placeholder="Adoptable?" v-model="newAnimalAdoptable">
+              <input type="text" class="form-control" placeholder="Adoptable? (true or false)" v-model="newAnimalAdoptable">
             </div>
             <div class="form-group col-md-4"></div>
             <div class="form-group col-md-4"></div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" placeholder="Male/Female" v-model="newAnimalGender">
+              <input type="text" class="form-control" placeholder="Male/Female (capitalized)" v-model="newAnimalGender">
             </div>
             <div class="form-group col-md-4"></div>
             <div class="form-group col-md-4"></div>
