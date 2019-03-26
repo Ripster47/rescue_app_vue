@@ -2,7 +2,7 @@
   <div class="animals-new">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1 class=" text-center pb-5">New Adoptable</h1>
+        <h1 class=" text-center pt-4 pb-4">New Adoptable</h1>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
           </ul>

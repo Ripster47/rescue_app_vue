@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <router-link class="col-1 btn btn-primary mt-2" :to="'/animals/'" tag="button">back</router-link>
-        <h1 class="col-10 text-center pb-4">{{ animal.name }} the {{ animal.species }}</h1>
+        <h1 class="col-10 text-center pt-4 pb-4">{{ animal.name }} the {{ animal.species }}</h1>
       </div>
       <div class="row">
         <div class="col-3"></div>

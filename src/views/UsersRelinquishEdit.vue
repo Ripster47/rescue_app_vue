@@ -3,8 +3,8 @@
     <div class="container">
       <div v-if="indicator">
         <form v-on:submit.prevent="submit()">
-          <h1 class="text-center pb-5">Relinquishment Application</h1>
-          <p class="pb-5">If you have not CREATED A PROFILE you must do so before you attempt to relinquish an animal. If you have, please update any information that may have changed and answer the following questions before proceeding</p>
+          <h1 class="text-center pt-4 pb-4">Relinquishment Application</h1>
+          <p class="pb-4">If you have not CREATED A PROFILE you must do so before you attempt to relinquish an animal. If you have, please update any information that may have changed and answer the following questions before proceeding</p>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
           </ul>
@@ -57,7 +57,7 @@
         </form>
       </div>
       <div v-else>
-        <h2 class="text-center pb-5">Relinquishment Confirmation</h2>
+        <h2 class="text-center pt-4 pb-4">Relinquishment Confirmation</h2>
           <form>
             <div class="row">
               <div class="col-5"></div>

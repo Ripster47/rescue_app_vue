@@ -9,8 +9,8 @@
               <li v-for="error in errors">{{ error }}</li>
             </ul>
 
-            <h1 class=" text-center pb-5">Adoption Application</h1>
-            <p class="pb-5">If you have not CREATED A PROFILE you must do so before you attempt to adopt an animal. If you have, please update any information that may have changed before proceeding</p>
+            <h1 class=" text-center pt-4 pb-4">Adoption Application</h1>
+            <p class="pb-4">If you have not CREATED A PROFILE you must do so before you attempt to adopt an animal. If you have, please update any information that may have changed before proceeding</p>
 
           <div class="row">
             <div class="form-group col-md-6">
@@ -148,7 +148,7 @@
     </div> 
     </div>
     <div v-else>
-      <h2 class="text-center pb-5">Adoption Confirmation</h2>
+      <h2 class="text-center pt-4 pb-4">Adoption Confirmation</h2>
         <form>
           <div class="row">
             <div class="col-5"></div>

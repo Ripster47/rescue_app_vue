@@ -7,8 +7,8 @@
           <li v-for="error in errors">{{ error }}</li>
         </ul>
 
-        <h1 class=" text-center pb-5">Create Your Profile</h1>
-        <p class="pb-5">Here, we will gather all of the information needed in order for you to adopt/relinquish an animal, from here forward you will be offered the chance to edit your information, but wont have to fill this out fully again</p>
+        <h1 class=" text-center pt-4 pb-4">Create Your Profile</h1>
+        <p class="pb-4">Here, we will gather all of the information needed in order for you to adopt/relinquish an animal, from here forward you will be offered the chance to edit your information, but wont have to fill this out fully again</p>
 
       <div class="row">
         <div class="form-group col-md-6">

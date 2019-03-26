@@ -6,7 +6,7 @@
       </div>
         <div class="col-4">
           <form class="text-center" v-on:submit.prevent="submit()">
-            <h1 class="pb-4 text-center">Login</h1>
+            <h1 class="pt-4 pb-4 text-center">Login</h1>
             <ul>
               <li class="text-danger" v-for="error in errors">{{ error }}</li>
             </ul>
