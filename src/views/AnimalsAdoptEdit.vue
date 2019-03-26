@@ -145,19 +145,17 @@
             </div>
           <input class="btn mt-2 mb-2 btn-primary" type="submit" value="Submit">
       </form>
-    </div>
-
-      
+    </div> 
     </div>
     <div v-else>
       <h2 class="text-center pb-5">Adoption Confirmation</h2>
-                <form>
-                  <div class="row">
-                    <div class="col-5"></div>
-                    <button class="col-2 btn btn-primary" v-on:click.prevent="createSubmission()">ADOPT!</button>
-                    <div class="col-5"></div>
-                  </div>
-                </form>
+        <form>
+          <div class="row">
+            <div class="col-5"></div>
+            <button class="col-2 btn btn-primary" v-on:click.prevent="createSubmission()">ADOPT!</button>
+            <div class="col-5"></div>
+          </div>
+        </form>
     </div>
   </div>
 </template>

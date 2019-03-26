@@ -11,7 +11,6 @@
           <div class="card-block">
             <a href="#"><h3 class="card-title">{{animal.name}}</h3></a>
             <p class="card-text">{{animal.description}}</p>
-            <a href="" class="btn btn-primary">Read more</a>
           </div>
         </div>
       </div>

@@ -1,40 +1,64 @@
-
 <template>
   <div class="animals-new">
-    <h1>New Adoptable!</h1>
-    <ul>
-      <li v-for="error in errors">{{ error }}</li>
-    </ul>
-    <form v-on:submit.prevent="submit()">
-      <div>
-        Name: <input v-model="newAnimalName">
+    <div class="container">
+      <form v-on:submit.prevent="submit()">
+        <h1 class=" text-center pb-5">New Adoptable!</h1>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+          </ul>
+          <div class="row">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Animal Name" v-model="newAnimalName">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Species" v-model="newAnimalSpecies">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Adoptable?" v-model="newAnimalAdoptable">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Male/Female" v-model="newAnimalGender">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Age" v-model="newAnimalAge">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Medical Status" v-model="newAnimalMedicalStatus">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Description" v-model="newAnimalDescription">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Donation" v-model="newAnimalDonation">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Image URL" v-model="newAnimalImageUrl">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-5"></div>
+            <input class="btn btn-primary col-md-2" type="submit" value="Create">
+            <div class="form-group col-md-5"></div>
+          </div>
+        </form>
       </div>
-      <div>
-        Species: <input v-model="newAnimalSpecies">
-      </div>
-      <div>
-        Adoptable: <input v-model="newAnimalAdoptable">
-      </div>
-      <div>
-        Gender: <input v-model="newAnimalGender">
-      </div>
-      <div>
-        Age: <input v-model="newAnimalAge">
-      </div>
-      <div>
-        Medical Status: <input v-model="newAnimalMedicalStatus">
-      </div>
-      <div>
-        Description: <input v-model="newAnimalDescription">
-      </div>
-       <div>
-        Adoption Donation: <input v-model="newAnimalDonation">
-      </div>
-      <div>
-        Image URL: <input v-model="newAnimalImageUrl">
-      </div>
-      <input type="submit" value="Create">
-    </form>
+    </div>
   </div>
 </template>
 

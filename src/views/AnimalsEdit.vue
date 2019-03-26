@@ -1,40 +1,64 @@
 <template>
   <div class="animals-edit">
-    <h1>Edit Adoptable</h1>
-    <ul>
-      <li v-for="error in errors">{{ error }}</li>
-    </ul>
-    <form v-on:submit.prevent="submit()">
-      <div>
-        Name: <input v-model="animal.name">
+    <div class="container">
+      <form v-on:submit.prevent="submit()">
+        <h1 class=" text-center pb-5">Edit {{animal.name}}</h1>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+          </ul>
+          <div class="row">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.name">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.species">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.adoptable">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.gender">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.age">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.medical_status">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.description">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.donation">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" v-model="animal.image_url">
+            </div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-5"></div>
+            <input class="btn btn-primary col-md-2" type="submit" value="Update">
+            <div class="form-group col-md-5"></div>
+          </div>
+        </form>
       </div>
-      <div>
-        Species: <input v-model="animal.species">
-      </div>
-      <div>
-        Adoptable: <input v-model="animal.adoptable">
-      </div>
-      <div>
-        Gender: <input v-model="animal.gender">
-      </div>
-      <div>
-        Age: <input v-model="animal.age">
-      </div>
-      <div>
-        Medical Status: <input v-model="animal.medical_status">
-      </div>
-      <div>
-        Description: <input v-model="animal.description">
-      </div>
-       <div>
-        Adoption Donation: <input v-model="animal.donation">
-      </div>
-      <div>
-        Image URL: <input v-model="animal.image_url">
-      </div>
-      <input type="submit" value="Update">
-    </form>
-  </div>
+    </div>
 </template>
 
 <style>
