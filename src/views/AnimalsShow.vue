@@ -2,7 +2,8 @@
   <div class="animals-show">
     <div class="container">
       <div class="row">
-        <h1 class="col-12 text-center pb-4">{{ animal.name }} the {{ animal.species }}</h1>
+        <router-link class="col-1 btn btn-primary mt-2" :to="'/animals/'" tag="button">back</router-link>
+        <h1 class="col-10 text-center pb-4">{{ animal.name }} the {{ animal.species }}</h1>
       </div>
       <div class="row">
         <div class="col-3"></div>

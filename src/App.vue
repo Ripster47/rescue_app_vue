@@ -63,15 +63,7 @@
        <div class="row justify-content-center">
         <div class="col-md-7">
           <div class="text-center copyright ">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link> |
-            <router-link to="/signup">Create Profile</router-link> |
-            <router-link to="/login">Login</router-link> |
-            <router-link to="/animals">Adoptables</router-link> |
-            <router-link to="/relinquish/current">Relinquishments</router-link> |
-            <router-link to="/animals/new">New</router-link> |
-            <router-link to="/submissions/requests">Pending Requests</router-link> |
-            <router-link to="/logout">Logout</router-link> 
+            <p>© 2018 Friends of Scales Reptile Rescue. All Rights Reserved.</p>
           </div>
         </div>
        </div>
