@@ -20,7 +20,7 @@
           <h4 class="pb-3"><strong>Age:</strong> <span> {{ animal.age }} years old</span></h4>
           <h4 class="pb-3"><strong>Gender:</strong> <span> {{ animal.gender }}</span></h4>
           <h4 class="pb-3"><strong>Medical Status:</strong> <span> {{ animal.medical_status}}</span></h4>
-          <h4 class="pb-3"><strong>Adoption Donation:</strong> <span> {{ animal.donation }}</span></h4>
+          <h4 class="pb-3"><strong>Adoption Donation:</strong> <span> {{ animal.formatted.donation }}</span></h4>
           <router-link class="btn btn-primary mr-3" :to="'/animals/' + animal.id + '/adopt'" tag="button">Adopt Me!</router-link>
           <router-link class="btn btn-warning ml-3 mr-3" :to="'/animals/' + animal.id + '/edit'" tag="button">Edit</router-link>
           <button class="btn btn-danger ml-3" v-on:click="destroyAnimal()">Delete</button>

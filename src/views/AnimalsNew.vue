@@ -93,7 +93,7 @@ export default {
                   age: this.newAnimalAge,
                   description: this.newAnimalDescription,
                   medical_status: this.newAnimalMedicalStatus,
-                  Donation: this.newAnimalDonation,
+                  donation: this.newAnimalDonation,
                   image_url: this.newAnimalImageUrl
                   };
     axios.post("/api/animals", params)

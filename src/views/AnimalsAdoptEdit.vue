@@ -143,7 +143,10 @@
                 <label class="radio-custom-label pl-2 form-check-label">No</label>
               </div>
             </div>
-          <input class="btn mt-2 mb-2 btn-primary" type="submit" value="Submit">
+            <div class="row"></div>
+        <div class="col-5"></div>
+        <input class="col-2 btn mt-2 mb-2 btn-primary" type="submit" value="Submit">
+        <div class="col-5"></div>
       </form>
     </div> 
     </div>
