@@ -24,6 +24,11 @@
             </li>
 
             <li class="nav-item dropdown drop_single ">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">About</a>
+            </li>
+
+
+            <li class="nav-item dropdown drop_single ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/animals">Adoptables</a>
             </li>
 
@@ -32,8 +37,7 @@
               
 
             <li class="nav-item dropdown drop_single ">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">The Crew</a>
-              
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/crew">Crew</a>
             </li>
 
             <li class="dropdown megaDropMenu nav-item ">
