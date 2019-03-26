@@ -3,7 +3,7 @@
     <div class="container">
       <div v-if="indicator">
         <form v-on:submit.prevent="submit()">
-          <h1 class=" text-center pb-5">Relinquish Application</h1>
+          <h1 class="text-center pb-5">Relinquish Application</h1>
           <p class="pb-5">Please update any information that may have changed and answer the following questions before proceeding</p>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
@@ -57,11 +57,12 @@
         </form>
       </div>
       <div v-else>
-        <h2>Relinquish form goes here</h2>
+        <h2 class="text-center pb-5">Relinquishment Confirmation</h2>
           <form>
-            <div>
-              <label>Click Below!</label>
-              <button v-on:click.prevent="createSubmission()">RELINQUISH!</button>
+            <div class="row">
+              <div class="col-5"></div>
+              <button class="col-2 btn btn-primary" v-on:click.prevent="createSubmission()">RELINQUISH!</button>
+              <div class="col-5"></div>
             </div>
           </form>
         </div>
