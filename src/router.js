@@ -8,6 +8,7 @@ import AnimalsAdoptEdit from './views/AnimalsAdoptEdit.vue'
 import UsersRelinquishEdit from './views/UsersRelinquishEdit.vue'
 import SubmissionsPending from './views/SubmissionsPending.vue'
 import Home from './views/Home.vue'
+import AdminTools from './views/AdminTools.vue'
 import About from './views/About.vue'
 import Catch from './views/Catch.vue'
 import Signup from './views/Signup.vue'
@@ -30,6 +31,7 @@ export default new Router({
     { path: '/animals/:id/adopt', name: 'animals-adopt', component: AnimalsAdoptEdit },
     { path: '/relinquish/current', name: 'users-relinquish', component: UsersRelinquishEdit },
     { path: '/about', name: 'about', component: About },
+    { path: '/admintools', name: 'admin-tools', component: AdminTools },
 
     { path: '/catch/:at_google/:exp_time/:rt_google', name: 'catch', component: Catch },
     

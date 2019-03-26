@@ -3,8 +3,8 @@
     <div class="container">
       <div v-if="indicator">
         <form v-on:submit.prevent="submit()">
-          <h1 class="text-center pb-5">Relinquish Application</h1>
-          <p class="pb-5">Please update any information that may have changed and answer the following questions before proceeding</p>
+          <h1 class="text-center pb-5">Relinquishment Application</h1>
+          <p class="pb-5">If you have not CREATED A PROFILE you must do so before you attempt to relinquish an animal. If you have, please update any information that may have changed and answer the following questions before proceeding</p>
           <ul>
             <li v-for="error in errors">{{ error }}</li>
           </ul>
@@ -162,7 +162,7 @@ export default {
       axios.post( "/api/submissions", params)
       .then(response => {
         console.log("Your relinquishment is now pending review!", response.data);
-        this.$router.push('/success');
+        this.$router.push('/');
       }).catch(error => {
         this.errors = error.response.data.errors
       });

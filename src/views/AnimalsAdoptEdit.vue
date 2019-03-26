@@ -248,7 +248,7 @@ export default {
       axios.post( "/api/submissions", params)
       .then(response => {
         console.log("Your adoption is now pending review!", response.data);
-        this.$router.push('/success');
+        this.$router.push('/');
       }).catch(error => {
         this.errors = error.response.data.errors
       });

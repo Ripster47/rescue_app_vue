@@ -29,18 +29,7 @@
 
             <li class="nav-item dropdown drop_single ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/relinquish/current">Relinquishments</a>
-              <ul class="dropdown-menu dd_first">
-                <li><a href="service.html">Services</a></li>
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service Details</a>
-                  <ul class="dropdown-menu submenu">
-                    <li><a href="service-details-left-sidebar.html">Service Left Sidebar</a></li>
-                    <li><a href="service-details-right-sidebar.html">Service Right Sidebar</a></li>
-                    <li><a href="service-details-fullwidth.html">Service Fullwidth</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+              
 
             <li class="nav-item dropdown drop_single ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">Meet the Crew</a>
@@ -55,6 +44,9 @@
             </li>
             <li class="dropdown megaDropMenu nav-item active" >
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/logout">Logout</a>
+            </li>
+            <li class="dropdown megaDropMenu nav-item active" >
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/admintools">Admin Tools</a>
             </li>
             <!-- header search -->
           </ul>
@@ -92,5 +84,8 @@
 <style>
 
 </style>
+
+<script>
+</script>
 
 
