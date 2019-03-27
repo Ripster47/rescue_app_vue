@@ -142,11 +142,11 @@
                 <input class="radio-custom form-check-input" name="radio-group-bequest" type="radio" value="false" v-model="user.bequest">
                 <label class="radio-custom-label pl-2 form-check-label">No</label>
               </div>
+          <div class="row"></div>
+          <div class="col-5"></div>
+          <input class="col-2 btn btn-primary" type="submit" value="Submit">
+          <div class="col-5"></div>
             </div>
-            <div class="row"></div>
-        <div class="col-5"></div>
-        <input class="col-2 btn mt-2 mb-2 btn-primary" type="submit" value="Submit">
-        <div class="col-5"></div>
       </form>
     </div> 
     </div>

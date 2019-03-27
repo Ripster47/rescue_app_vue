@@ -8,7 +8,7 @@
               <div class="card-header" role="tab" id="heading1">
                 <div class="" v-for="submission in submissions" v-bind:value="currentSubmissionId">
                   <h6 class="mb-0">
-                    <a data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse1">
+                    <a data-parent="#accordion" aria-expanded="true" aria-controls="collapse1">
                       <div class="" slot="header"><h1>{{submission.formatted.purpose}}</h1></div> 
                     </a>
                   </h6>
