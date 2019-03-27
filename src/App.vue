@@ -27,6 +27,9 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/about">About</a>
             </li>
 
+             <li class="nav-item dropdown drop_single ">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/crew">Crew</a>
+            </li>
 
             <li class="nav-item dropdown drop_single ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/animals">Adoptables</a>
@@ -34,11 +37,6 @@
 
             <li class="nav-item dropdown drop_single ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/relinquish/current">Relinquishments</a>
-              
-
-            <li class="nav-item dropdown drop_single ">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/crew">Crew</a>
-            </li>
 
             <li class="dropdown megaDropMenu nav-item ">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/signup">Register</a>
