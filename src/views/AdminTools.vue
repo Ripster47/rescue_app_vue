@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-4"></div>
-        <router-link class="col-4 btn mt-2 mb-2 btn-primary" :to="'/submissions/requests'" tag="button">Pending Applications</router-link>
+        <router-link class="mt-4 col-4 btn mt-2 mb-2 btn-primary" :to="'/submissions/requests'" tag="button">Pending Applications</router-link>
         <div class="col-4"></div>
       </div>
       <div class="row">
