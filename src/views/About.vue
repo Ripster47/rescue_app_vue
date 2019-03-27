@@ -26,6 +26,7 @@
         </div>
       </div>
       <br>
+      <hr>
        <div class="row">
         <div class="col-7">
           <p>General Information, Inquiries, and Donations:  <u>info@friendsofscales.com</u>
