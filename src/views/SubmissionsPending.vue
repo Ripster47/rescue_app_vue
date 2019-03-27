@@ -21,14 +21,20 @@
                               <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
                             </div>
                             <div class="col-6">
-                              <p>Name: {{submission.user.first_name}} {{submission.user.last_name}}</p>
-                              <p v-if="submission.animal">Would like to adopt: {{submission.animal.name}}</p>
-                              <p>Address: {{submission.user.address_1}} {{submission.user.address_2}}</p>
-                              <p>City: {{submission.user.city}} State: {{submission.user.state}} Zip: {{submission.user.zip_code}}</p>
-                              <p>Email: {{submission.user.email}}</p>
-                              <p>Phone Number: {{submission.user.phone_number}}</p>
-                              <p>{{submission.animal_type}}</p>
-                              <p>{{submission.relinquish_reason}}</p>
+                              <p class="mb-1"><u>Name</u>: {{submission.user.first_name}} {{submission.user.last_name}}</p>
+                              <p v-if="submission.animal"><u>Would like to adopt</u>: {{submission.animal.name}}</p>
+                              <p class="mb-1"><u>Address</u>: {{submission.user.address_1}} {{submission.user.address_2}}</p>
+                              <p class="mb-1"><u>City</u>: {{submission.user.city}}</p> 
+                              <p class="mb-1"><u>State</u>: {{submission.user.state}}</p>
+                              <p class="mb-1"><u>Zip</u>: {{submission.user.zip_code}}</p>
+                              <p class="mb-1"><u>Email</u>: {{submission.user.email}}</p>
+                              <p class="mb-1"><u>Phone Number</u>: {{submission.user.phone_number}}</p>
+                            <div v-if="!submission.animal">
+                              <p class="mb-1"><u>Is Relinquishing</u>:</p>
+                              <p class="mb-1"> {{submission.animal_type}}</p>
+                              <p class="mb-1"><u>Because</u>...</p>
+                              <p class="mb-1"> {{submission.relinquish_reason}}</p>
+                            </div>
                             </div>
                               <div class="col-2 text-center"> 
                                 <button class="btn mt-2 mb-2 btn-primary ">Approve</button>
