@@ -19,6 +19,7 @@
                           <div class="row" slot="header">
                             <div class="float-left col-4">
                               <img v-if="submission.animal" v-bind:src="submission.animal.image_url">
+                              <img v-if="!submission.animal" v-bind:src="'/alligator-web 2.png'">
                             </div>
                             <div class="col-6">
                               <p class="mb-1"><u>Name</u>: {{submission.user.first_name}} {{submission.user.last_name}}</p>
