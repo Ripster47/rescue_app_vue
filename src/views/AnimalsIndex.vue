@@ -5,7 +5,7 @@
         <div class="card col-md-2 card-spacing" v-for="animal in animals">
           <router-link v-bind:to="'/animals/' + animal.id">
           <div class="card_img mt-3">
-              <img class="img-full" v-bind:src="animal.image_url" v-bind:alt="animal.name">
+              <img class="img-full" v-bind:src="animal.photo" v-bind:alt="animal.name">
           </div>
           <div class="">
             <h3 class="text-center card-title">{{animal.name}}</h3>

@@ -38,16 +38,16 @@
                             </div>
                             </div>
                               <div class="col-2 text-center"> 
-                                <button class="btn mt-2 mb-2 btn-primary ">Approve</button>
+                                <button class="btn mt-2 mb-2 btn-primary" v-on:click="approveSubmission(submission.id)">Approve</button>
                                 <button class="btn mt-4 mb-2 btn-danger" v-on:click="denySubmission(submission.id)">Deny</button>
                               </div>
                           </div>
-                          <div slot="content" class="text-center row">
+                          <!-- <div slot="content" class="text-center row">
                             <form class="col-8 pt-4 pl-5 font-weight-bold">
                               Schedule Pickup/Dropoff: <input type="datetime-local" v-model="startTime">
                             </form>
                             <button class="text-center col-4 btn mt-2 mb-2 btn-primary " v-on:click="createEvent(submission)">Create Event</button>
-                          </div>
+                          </div> -->
                         </badger-accordion-item>
                       </badger-accordion>
                     </div>

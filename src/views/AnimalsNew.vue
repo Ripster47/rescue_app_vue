@@ -52,6 +52,11 @@
               <input type="text" class="form-control" placeholder="Image URL" v-model="newAnimalImageUrl">
             </div>
             <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+              <input type="file" class="form-control" placeholder="Image URL" v-on:change="setFile($event)" ref="fileInput">
+            </div>
+            <div class="form-group col-md-4"></div>
             <div class="form-group col-md-5"></div>
             <input class="btn btn-primary col-md-2" type="submit" value="Create">
             <div class="form-group col-md-5"></div>
@@ -78,24 +83,31 @@ export default {
             newAnimalMedicalStatus: "",
             newAnimalDonation: "",
             newAnimalImageUrl: "",
+            photo: "",
             errors: []
             };
   },
   created: function() {},
   methods: {
+    setFile: function(event) {
+      if (event.target.files.length > 0) {
+        this.photo = event.target.files[0];
+      }
+    },
     submit: function() {
       console.log("Add New Adoptable");
-    var params = {
-                  name: this.newAnimalName,
-                  species: this.newAnimalSpecies,
-                  adoptable: this.newAnimalAdoptable,
-                  gender: this.newAnimalGender,
-                  age: this.newAnimalAge,
-                  description: this.newAnimalDescription,
-                  medical_status: this.newAnimalMedicalStatus,
-                  donation: this.newAnimalDonation,
-                  image_url: this.newAnimalImageUrl
-                  };
+    var params = new FormData();
+      params.append("name", this.newAnimalName);
+      params.append("species", this.newAnimalSpecies);
+      params.append("adoptable", this.newAnimalAdoptable);
+      params.append("gender", this.newAnimalGender);
+      params.append("age", this.newAnimalAge);
+      params.append("description", this.newAnimalDescription);
+      params.append("medical_status", this.newAnimalMedicalStatus);
+      params.append("donation", this.newAnimalDonation);
+      params.append("image_url", this.newAnimalImageUrl);
+      params.append("photo", this.photo);
+
     axios.post("/api/animals", params)
       .then(response => {
         console.log("Success", response.data);

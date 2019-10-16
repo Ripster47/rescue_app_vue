@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-3"></div>
         <div class="image_container col-6 pb-4">
-          <img class="image_bordered" v-bind:src="animal.image_url" alt="gallery">
+          <img class="image_bordered" v-bind:src="animal.photo" alt="gallery">
         </div>
         <div class="col-3"></div>
       </div>
@@ -62,6 +62,7 @@ export default {
                 medical_status: "",
                 gender: "",
                 age: "",
+                formatted: "",
                 donation: ""
                 }
       };
